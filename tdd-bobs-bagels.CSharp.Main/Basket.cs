@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,18 +9,18 @@ namespace tdd_bobs_bagels.CSharp.Main
 {
     public class Basket
     {
-        private int _capacity;
         private List<string> _items;
+        public int capacity { get; set; }
 
         public Basket(int capacity)
         {
-            _capacity = capacity;
+            this.capacity = capacity;
             _items = new List<string>();
         }
 
         public bool addBagel(string bagel)
         {
-            if (_items.Count < _capacity)
+            if (_items.Count < capacity)
             {
                 _items.Add(bagel);
                 return true;

@@ -31,4 +31,16 @@ public class BobBagelsTests
         bool result = basket.removeBagel(a);
         Assert.That(result, Is.EqualTo(b));
     }
+
+    [TestCase(1)]
+    [TestCase(100)]
+    [TestCase(-5)]
+    public void ChangeCapacityTest(int a)
+    {
+        Basket basket = new Basket(0);
+
+        basket.changeCapacity(a);
+        Assert.That(basket.capacity, Is.EqualTo(a));
+    }
+
 }
