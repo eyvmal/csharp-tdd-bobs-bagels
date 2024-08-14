@@ -1,3 +1,4 @@
+global using NUnit.Framework;
 using tdd_bobs_bagels.CSharp.Main;
 
 namespace csharp_tdd_bobs_bagels.tests;

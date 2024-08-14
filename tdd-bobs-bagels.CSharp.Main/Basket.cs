@@ -19,6 +19,11 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool addBagel(string bagel)
         {
+            if (_items.Count < _capacity)
+            {
+                _items.Add(bagel);
+                return true;
+            }
             return false;
         }
         public bool removeBagel(string bagel)
