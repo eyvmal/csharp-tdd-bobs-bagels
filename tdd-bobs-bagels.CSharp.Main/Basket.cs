@@ -38,7 +38,7 @@ namespace tdd_bobs_bagels.CSharp.Main
         }
         public void changeCapacity(int newCapacity)
         {
-
+            capacity = newCapacity;
         }
     }
 }
