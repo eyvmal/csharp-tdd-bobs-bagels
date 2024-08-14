@@ -36,9 +36,14 @@ namespace tdd_bobs_bagels.CSharp.Main
             }
             return false;
         }
-        public void changeCapacity(int newCapacity)
+        public bool changeCapacity(int newCapacity)
         {
-            capacity = newCapacity;
+            if (_items.Count <= newCapacity)
+            {
+                capacity = newCapacity;
+                return true;
+            }
+            return false;
         }
     }
 }

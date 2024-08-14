@@ -32,15 +32,16 @@ public class BobBagelsTests
         Assert.That(result, Is.EqualTo(b));
     }
 
-    [TestCase(1)]
-    [TestCase(100)]
-    [TestCase(-5)]
-    public void ChangeCapacityTest(int a)
+    [TestCase(1, true)]
+    [TestCase(100, true)]
+    [TestCase(-5, false)]
+    public void ChangeCapacityTest(int a, bool b)
     {
-        Basket basket = new Basket(0);
+        Basket basket = new Basket(5);
+        basket.addBagel("b1");
 
-        basket.changeCapacity(a);
-        Assert.That(basket.capacity, Is.EqualTo(a));
+        bool result = basket.changeCapacity(a);
+        Assert.That(result, Is.EqualTo(b));
     }
 
 }
