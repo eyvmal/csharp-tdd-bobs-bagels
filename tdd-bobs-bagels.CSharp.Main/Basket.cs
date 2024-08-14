@@ -28,6 +28,11 @@ namespace tdd_bobs_bagels.CSharp.Main
         }
         public bool removeBagel(string bagel)
         {
+            if (_items.Contains(bagel))
+            {
+                _items.Remove(bagel);
+                return true;
+            }
             return false;
         }
         public void changeCapacity(int newCapacity)
